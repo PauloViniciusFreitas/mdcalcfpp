@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Escore para Fibrose Pulmonar Progressiva</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="mdcalc-header-green">
+    <div class="container">
+      <h1>Escore para Fibrose Pulmonar Progressiva</h1>
+      <div class="subtitle">
+        Classificação de risco para predizer fibrose pulmonar progressiva
+      </div>
+    </div>
+  </header>
+  <main class="container py-4">
+    <form id="fibroseForm">
+      <fieldset>
+        <!-- legend removido conforme solicitado -->
+        <!-- <legend>Variáveis clínicas</legend> -->
+
+        <div class="mdcalc-field">
+          <label class="mdcalc-label">Declínio SpO₂ &lt;90% ao repouso no acompanhamento</label>
+          <div class="btn-group btn-group-toggle mdcalc-btn-group" data-toggle="buttons">
+            <input type="radio" class="btn-check" name="spo2_90" id="spo2_90_nao" value="0" autocomplete="off" checked>
+            <label class="btn mdcalc-btn-no" for="spo2_90_nao">Não <span class="mdcalc-score">0</span></label>
+            <input type="radio" class="btn-check" name="spo2_90" id="spo2_90_sim" value="2" autocomplete="off">
+            <label class="btn mdcalc-btn-yes" for="spo2_90_sim">Sim <span class="mdcalc-score">2</span></label>
+          </div>
+        </div>
+
+        <div class="mdcalc-field">
+          <label class="mdcalc-label">Progressão fibrose na TCAR</label>
+          <div class="btn-group btn-group-toggle mdcalc-btn-group" data-toggle="buttons">
+            <input type="radio" class="btn-check" name="tcar" id="tcar_nao" value="0" autocomplete="off" checked>
+            <label class="btn mdcalc-btn-no" for="tcar_nao">Não <span class="mdcalc-score">0</span></label>
+            <input type="radio" class="btn-check" name="tcar" id="tcar_sim" value="2" autocomplete="off">
+            <label class="btn mdcalc-btn-yes" for="tcar_sim">Sim <span class="mdcalc-score">2</span></label>
+          </div>
+        </div>
+
+        <div class="mdcalc-field">
+          <label class="mdcalc-label">Piora da dispneia</label>
+          <div class="btn-group btn-group-toggle mdcalc-btn-group" data-toggle="buttons">
+            <input type="radio" class="btn-check" name="dispneia" id="dispneia_nao" value="0" autocomplete="off" checked>
+            <label class="btn mdcalc-btn-no" for="dispneia_nao">Não <span class="mdcalc-score">0</span></label>
+            <input type="radio" class="btn-check" name="dispneia" id="dispneia_sim" value="1" autocomplete="off">
+            <label class="btn mdcalc-btn-yes" for="dispneia_sim">Sim <span class="mdcalc-score">1</span></label>
+          </div>
+        </div>
+
+        <div class="mdcalc-field">
+          <label class="mdcalc-label">Declínio SpO₂ ≥3% ao repouso</label>
+          <div class="btn-group btn-group-toggle mdcalc-btn-group" data-toggle="buttons">
+            <input type="radio" class="btn-check" name="spo2_3" id="spo2_3_nao" value="0" autocomplete="off" checked>
+            <label class="btn mdcalc-btn-no" for="spo2_3_nao">Não <span class="mdcalc-score">0</span></label>
+            <input type="radio" class="btn-check" name="spo2_3" id="spo2_3_sim" value="1" autocomplete="off">
+            <label class="btn mdcalc-btn-yes" for="spo2_3_sim">Sim <span class="mdcalc-score">1</span></label>
+          </div>
+        </div>
+
+        <div class="mdcalc-field">
+          <label class="mdcalc-label">Declínio CVF% relativo</label>
+          <div class="btn-group btn-group-toggle mdcalc-btn-group" data-toggle="buttons">
+            <input type="radio" class="btn-check" name="cvf" id="cvf_menor5" value="0" autocomplete="off" checked>
+            <label class="btn mdcalc-btn-no" for="cvf_menor5">&lt;5% <span class="mdcalc-score">0</span></label>
+            <input type="radio" class="btn-check" name="cvf" id="cvf_5a9" value="1" autocomplete="off">
+            <label class="btn mdcalc-btn-yes" for="cvf_5a9">5%-9% <span class="mdcalc-score">1</span></label>
+            <input type="radio" class="btn-check" name="cvf" id="cvf_maior10" value="2" autocomplete="off">
+            <label class="btn mdcalc-btn-yes" for="cvf_maior10">&ge;10% <span class="mdcalc-score">2</span></label>
+          </div>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn-primary w-100 mt-4 mdcalc-btn-calc">Calcular</button>
+    </form>
+    <section id="resultado" style="display:none;" class="mt-5">
+      <h2>Escore</h2>
+      <p id="score"></p>
+      <p id="classe"></p>
+    </section>
+  </main>
+  <footer class="text-center text-muted my-4">
+    <small>Consulte fontes clínicas para decisões médicas.</small>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="psi.js"></script>
+</body>
+</html>

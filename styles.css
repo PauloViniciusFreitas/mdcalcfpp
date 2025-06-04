@@ -1,0 +1,239 @@
+:root {
+  --verde-header-mdcalc: #2e7d32;
+  --verde-mdcalc: #67b694;
+  --verde-mdcalc-hover: #4daa7f;
+  --cinza-claro-mdcalc: #f7f7f7;
+  --cinza-borda-mdcalc: #dddddd;
+  --cinza-texto-mdcalc: #575757;
+  --azul-botao-mdcalc: #3678bb;
+  --azul-botao-hover-mdcalc: #265d98;
+  --feminino-mdcalc: #5c9dbb;
+  --feminino-mdcalc-hover: #417b97;
+  --cinza-btn-active: #bdbdbd;
+  --cinza-btn-active-text: #20344f;
+}
+
+body {
+  background: #f7f7f7;
+}
+
+/* Cabeçalho verde MDCalc */
+header.mdcalc-header-green {
+  background: var(--verde-header-mdcalc);
+  color: #fff;
+  padding: 1.3rem 0 1rem 0;
+  margin-bottom: 2.5rem;
+  border-bottom: 3px solid var(--azul-botao-mdcalc);
+  box-shadow: 0 2px 10px rgba(46,125,50,0.10);
+}
+header.mdcalc-header-green h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+header.mdcalc-header-green .subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.98;
+  margin-top: .2em;
+  margin-bottom: 0;
+}
+
+main.container {
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  box-shadow: 0 8px 32px rgba(13,45,81,0.11), 0 1.5px 6px rgba(13,45,81,0.07);
+  border: 1px solid var(--cinza-borda-mdcalc);
+}
+
+.mdcalc-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--cinza-borda-mdcalc);
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+.mdcalc-field:last-child {
+  border-bottom: none;
+}
+.mdcalc-label {
+  flex-grow: 1;
+  font-size: 1.08rem;
+  color: #09243a;
+  font-weight: 500;
+  margin-bottom: 0;
+  min-width: 220px;
+}
+.mdcalc-input-group {
+  min-width: 240px;
+  max-width: 320px;
+}
+.mdcalc-input {
+  border-radius: .5rem 0 0 .5rem!important;
+}
+.input-group-text {
+  background: var(--cinza-claro-mdcalc);
+  color: var(--cinza-texto-mdcalc);
+  border-color: var(--cinza-borda-mdcalc);
+  border-radius: 0 .5rem .5rem 0!important;
+  font-size: 1rem;
+}
+.mdcalc-btn-group .btn {
+  font-weight: 500;
+  font-size: 1.07rem;
+  border-radius: 0.5rem!important;
+  border-width: 1.5px;
+  min-width: 100px;
+  box-shadow: none!important;
+  transition: background .14s, color .13s;
+  border-color: var(--cinza-borda-mdcalc);
+  background: var(--cinza-claro-mdcalc);
+  color: var(--cinza-texto-mdcalc);
+  margin-right: 0px;
+}
+.mdcalc-btn-group .btn:last-child {
+  margin-right: 0;
+}
+.mdcalc-btn-group .btn span.mdcalc-score {
+  margin-left: 0.4em;
+  font-weight: 400;
+  font-size: 0.97em;
+}
+.mdcalc-btn-group .btn-check:checked + .mdcalc-btn-yes,
+.mdcalc-btn-group .mdcalc-btn-yes.active,
+.mdcalc-btn-group .mdcalc-btn-yes:active,
+.mdcalc-btn-group .mdcalc-btn-yes:focus {
+  background: var(--verde-mdcalc) !important;
+  color: #fff !important;
+  border-color: var(--verde-mdcalc) !important;
+}
+.mdcalc-btn-group .mdcalc-btn-yes:hover {
+  background: var(--verde-mdcalc-hover) !important;
+  color: #fff !important;
+}
+.mdcalc-btn-group .btn-check:not(:checked) + .mdcalc-btn-yes {
+  background: var(--cinza-claro-mdcalc) !important;
+  color: var(--cinza-texto-mdcalc) !important;
+  border-color: var(--cinza-borda-mdcalc) !important;
+}
+/* NOVO: Destacar o botão "Não" quando selecionado */
+.mdcalc-btn-group .btn-check:checked + .mdcalc-btn-no,
+.mdcalc-btn-group .mdcalc-btn-no.active,
+.mdcalc-btn-group .mdcalc-btn-no:active,
+.mdcalc-btn-group .mdcalc-btn-no:focus {
+  background: var(--cinza-btn-active) !important;
+  color: var(--cinza-btn-active-text) !important;
+  border-color: var(--cinza-btn-active) !important;
+}
+.mdcalc-btn-group .mdcalc-btn-no:hover {
+  background: #ececec !important;
+}
+.mdcalc-btn-group .btn-outline-secondary,
+.mdcalc-btn-group .mdcalc-btn-no {
+  border-left-width: 0px;
+}
+.mdcalc-btn-group .btn:first-child {
+  border-left-width: 1.5px;
+}
+.mdcalc-btn-group .btn:last-child {
+  border-right-width: 1.5px;
+}
+/* Sexo */
+.mdcalc-btn-group .btn-check:checked + .mdcalc-btn-feminino,
+.mdcalc-btn-group .mdcalc-btn-feminino.active,
+.mdcalc-btn-group .mdcalc-btn-feminino:active,
+.mdcalc-btn-group .mdcalc-btn-feminino:focus {
+  background: var(--feminino-mdcalc) !important;
+  color: #fff !important;
+  border-color: var(--feminino-mdcalc) !important;
+}
+.mdcalc-btn-group .mdcalc-btn-feminino:hover {
+  background: var(--feminino-mdcalc-hover) !important;
+  color: #fff !important;
+}
+.mdcalc-btn-group .btn-check:not(:checked) + .mdcalc-btn-feminino {
+  background: var(--cinza-claro-mdcalc) !important;
+  color: var(--cinza-texto-mdcalc) !important;
+  border-color: var(--cinza-borda-mdcalc) !important;
+}
+.mdcalc-btn-group .btn-check:checked + .mdcalc-btn-masculino,
+.mdcalc-btn-group .mdcalc-btn-masculino.active,
+.mdcalc-btn-group .mdcalc-btn-masculino:active,
+.mdcalc-btn-group .mdcalc-btn-masculino:focus {
+  background: var(--verde-mdcalc) !important;
+  color: #fff !important;
+  border-color: var(--verde-mdcalc) !important;
+}
+.mdcalc-btn-group .mdcalc-btn-masculino:hover {
+  background: var(--verde-mdcalc-hover) !important;
+  color: #fff !important;
+}
+.mdcalc-btn-group .btn-check:not(:checked) + .mdcalc-btn-masculino {
+  background: var(--cinza-claro-mdcalc) !important;
+  color: var(--cinza-texto-mdcalc) !important;
+  border-color: var(--cinza-borda-mdcalc) !important;
+}
+
+/* Botão calcular */
+.mdcalc-btn-calc,
+.mdcalc-btn-calc:active,
+.mdcalc-btn-calc:focus {
+  background: var(--azul-botao-mdcalc) !important;
+  border-color: var(--azul-botao-mdcalc) !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.13rem;
+}
+.mdcalc-btn-calc:hover {
+  background: var(--azul-botao-hover-mdcalc) !important;
+}
+
+#resultado {
+  background: var(--cinza-claro-mdcalc);
+  border-radius: 10px;
+  padding: 1.3rem 1.2rem;
+  margin-top: 2.2rem;
+  box-shadow: 0 2px 8px rgba(103,182,148,0.08);
+  border: 1.3px solid var(--verde-mdcalc);
+  text-align: left;
+}
+
+#score {
+  font-size: 1.65rem;
+  font-weight: bold;
+  color: var(--azul-botao-mdcalc);
+}
+
+#classe {
+  font-size: 2.1rem; /* tamanho maior conforme solicitado */
+  font-weight: 800;
+  color: var(--verde-mdcalc);
+  margin-top: 0.7em;
+}
+
+#orientacao {
+  color: #20344f;
+  font-size: 1.02rem;
+}
+
+@media (max-width: 900px) {
+  .mdcalc-field {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mdcalc-label {
+    min-width: unset;
+    margin-bottom: 0.4em;
+  }
+  .mdcalc-btn-group .btn {
+    min-width: 70px;
+    font-size: 1em;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+  }
+}
